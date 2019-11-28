@@ -1,0 +1,29 @@
+{
+    "name": "ydin/third-party-resource",
+    "require": {
+        "doctrine/cache": "1.8.0",
+        "guzzlehttp/guzzle": "6.3.*",
+        "php": ">=7.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "ThirdPartyResource\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "ThirdPartyResource\\ThirdPartyResourceServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}
