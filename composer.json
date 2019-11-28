@@ -1,11 +1,16 @@
 {
     "name": "ydin/third-party-resource",
+    "license": "MIT",
+    "config": {
+        "sort-packages": true
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
     "require": {
-        "doctrine/cache": "1.8.0",
-        "guzzlehttp/guzzle": "6.3.*",
+        "doctrine/cache": ">=1.8",
+        "guzzlehttp/guzzle": ">=6.3",
         "php": ">=7.1"
     },
-    "license": "MIT",
     "autoload": {
         "psr-4": {
             "ThirdPartyResource\\": "src/"
@@ -21,9 +26,6 @@
             ]
         }
     },
-    "config": {
-        "sort-packages": true
-    },
-    "prefer-stable": true,
-    "minimum-stability": "dev"
+    "scripts": {
+    }
 }
