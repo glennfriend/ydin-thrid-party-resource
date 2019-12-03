@@ -37,6 +37,12 @@ composer config "repositories.${pname}" path ""
 composer require "ydin/${pname}:0.1.0"
 ```
 
+### vi .gitignore
+```
+/packages/__*
+/storage/third-party-resource/*
+```
+
 ### about APIDOC
 ```
 npm install apidoc apidoc-plugin-json -g
