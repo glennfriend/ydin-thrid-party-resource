@@ -27,5 +27,7 @@
         }
     },
     "scripts": {
+        "apidoc-server": "php -S 127.0.0.1:8008 -t public/apidoc/",
+        "apidoc": "apidoc -i ./src/ -o ./public/apidoc && google-chrome 127.0.0.1:8008"
     }
 }
