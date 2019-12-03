@@ -42,7 +42,7 @@ class TryCommand extends Command
      */
     protected function tryBeeTemplates30second()
     {
-        $api = $this->resourceBuild->beeFreeTemplates();
+        $api = $this->resourceBuild->beeFree()->templates();
         echo ($api->getJsonCache([
             'page' => 1,
         ], 30));
@@ -53,7 +53,7 @@ class TryCommand extends Command
      */
     protected function tryBeeTemplate()
     {
-        $api = $this->resourceBuild->beeFreeTemplate();
+        $api = $this->resourceBuild->beeFree()->template();
         echo ($api->getJsonForever([
             'id' => 371,
         ]));

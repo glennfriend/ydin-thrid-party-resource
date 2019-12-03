@@ -3,60 +3,29 @@ declare(strict_types=1);
 
 namespace ThirdPartyResource;
 
-use ThirdPartyResource\ThirdParty\Api\BeeFree\BeeFreeTemplate;
-use ThirdPartyResource\ThirdParty\Api\BeeFree\BeeFreeTemplates;
-use ThirdPartyResource\ThirdParty\Api\FsTracking\FsTrackingBiActionlogs;
-use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardProcessor;
-use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardTransactions;
-use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardPaymentProfiles;
-use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardUserUpsellTalkfamilySubscriptions;
-use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardUserUpsellTalkfamilySubscriptionOrders;
+use ThirdPartyResource\ThirdParty\Api\BeeFree\BeeFree;
+use ThirdPartyResource\ThirdParty\Api\FsTracking\FsTracking;
+use ThirdPartyResource\ThirdParty\Api\Kidguard\Kidguard;
 
 /**
  * resource build API
  */
 class ResourceBuild
 {
-    public function beeFreeTemplate()
+    public function beeFree(): BeeFree
     {
-        return $this->factory(BeeFreeTemplate::class);
+        return $this->factory(BeeFree::class);
     }
 
-    public function beeFreeTemplates()
+    public function fsTracking(): FsTracking
     {
-        return $this->factory(BeeFreeTemplates::class);
+        return $this->factory(FsTracking::class);
     }
 
-    public function fsTrackingBiActionlogs()
+    public function kidguard(): Kidguard
     {
-        return $this->factory(FsTrackingBiActionlogs::class);
+        return $this->factory(Kidguard::class);
     }
-
-    public function kidguardProcessor()
-    {
-        return $this->factory(KidguardProcessor::class);
-    }
-
-    public function kidguardTransactions()
-    {
-        return $this->factory(KidguardTransactions::class);
-    }
-
-    public function kidguardPaymentProfiles()
-    {
-        return $this->factory(KidguardPaymentProfiles::class);
-    }
-
-    public function kidguardUserUpsellTalkfamilySubscriptions()
-    {
-        return $this->factory(KidguardUserUpsellTalkfamilySubscriptions::class);
-    }
-
-    public function kidguardUserUpsellTalkfamilySubscriptionOrders()
-    {
-        return $this->factory(KidguardUserUpsellTalkfamilySubscriptionOrders::class);
-    }
-
 
     // --------------------------------------------------------------------------------
     //  private

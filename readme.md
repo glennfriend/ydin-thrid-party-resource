@@ -2,7 +2,7 @@
 
 ### how to use
 ```
-$api = $resourceBuild->example();
+$api = $resourceBuild->groupName()->apiName();
    
 $response = $api->send($array);
 $response = $api->getResponse($array);
@@ -17,14 +17,14 @@ $array    = $api->getArrayForever();
 ### example
 ```
 use ThirdPartyResource\ResourceBuild;
- 
-$api = $resourceBuild->fsTrackingBiActionlogs();
+
+$api = $resourceBuild->fsTracking()->biActionlogs();
 $api->send($row);
-    
-$api = $resourceBuild->kidguardProcessor();
+
+$api = $resourceBuild->kidguard()->processor();
 $api->getResponse($row);
     
-$api = $resourceBuild->beeFreeTemplates();
+$api = $resourceBuild->beeFree()->templates();
 $api->getJsonCache($row, 86400);
 ```
 
