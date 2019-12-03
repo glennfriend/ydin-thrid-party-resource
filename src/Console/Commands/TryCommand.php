@@ -28,19 +28,35 @@ class TryCommand extends Command
     {
         $this->resourceBuild = $resourceBuild;
 
-        // $this->justTest();
-        $this->tryBeeTemplate30second();
+        // $this->tryBeeTemplates30second();
+        // $this->tryBeeTemplate();
+        $this->justTest();
     }
+
+    // --------------------------------------------------------------------------------
+    //  private
+    // --------------------------------------------------------------------------------
 
     /**
      *
      */
-    protected function tryBeeTemplate30second()
+    protected function tryBeeTemplates30second()
     {
         $api = $this->resourceBuild->beeFreeTemplates();
         echo ($api->getJsonCache([
             'page' => 1,
         ], 30));
+    }
+
+    /**
+     *
+     */
+    protected function tryBeeTemplate()
+    {
+        $api = $this->resourceBuild->beeFreeTemplate();
+        echo ($api->getJsonForever([
+            'id' => 371,
+        ]));
     }
 
     /**

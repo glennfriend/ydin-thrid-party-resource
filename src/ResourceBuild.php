@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace ThirdPartyResource;
 
+use ThirdPartyResource\ThirdParty\Api\BeeFree\BeeFreeTemplate;
 use ThirdPartyResource\ThirdParty\Api\BeeFree\BeeFreeTemplates;
 use ThirdPartyResource\ThirdParty\Api\FsTracking\FsTrackingBiActionlogs;
 use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardProcessor;
@@ -16,6 +17,11 @@ use ThirdPartyResource\ThirdParty\Api\Kidguard\KidguardUserUpsellTalkfamilySubsc
  */
 class ResourceBuild
 {
+    public function beeFreeTemplate()
+    {
+        return $this->factory(BeeFreeTemplate::class);
+    }
+
     public function beeFreeTemplates()
     {
         return $this->factory(BeeFreeTemplates::class);
