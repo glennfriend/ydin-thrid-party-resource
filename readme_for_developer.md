@@ -20,8 +20,13 @@ composer require "ydin/${pname}:dev-master" --update-with-dependencies
 
 ### git tag push
 ```
-git tag 0.1.0  --force
-git push origin --tags  --force
+git tag 0.1.0
+git push origin --tags
+
+or
+
+git tag 0.x.x  --force
+git push originxxxxxx --tags  --force
 ```
 
 ### update packagist.org
@@ -33,7 +38,7 @@ update to https://packagist.org/packages/ydin/third-party-resource (or hook)
 ```
 pname="third-party-resource";
 composer remove "ydin/${pname}"
-composer config "repositories.${pname}" path ""
+composer config "repositories.${pname}" --unset
 composer require "ydin/${pname}:0.1.0"
 ```
 
@@ -46,8 +51,8 @@ composer require "ydin/${pname}:0.1.0"
 ### about APIDOC
 ```
 npm install apidoc apidoc-plugin-json -g
-apidoc -i ./src/ -o ./apidoc
+apidoc -i ./src/ -o ./public/apidoc
 
-php -S 127.0.0.1:6000
-google-chrome http://127.0.0.1:6000/apidoc/ &
+php -S 127.0.0.1:8008 -t public/apidoc/
+google-chrome http://127.0.0.1:8008
 ```

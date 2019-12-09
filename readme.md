@@ -45,5 +45,6 @@ ls storage/third-party-resource/*.json
 
 ### in 未來
 ```
+- 將 apidoc build 到 github homepage
 - ResourceBuild 用 gen code 產生, 資料來自於 ThirdParty/Api/*/*.php
 ```
