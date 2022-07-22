@@ -1,7 +1,12 @@
 <?php
+
 namespace ThirdPartyResource\Utility\Cache;
 
+use Exception;
+
 /**
+ * @deprecated
+ *
  * file storage
  *      - use Doctrine Cache
  *      - 不是使用 laravel cache
@@ -11,7 +16,6 @@ namespace ThirdPartyResource\Utility\Cache;
  */
 class FileStorage
 {
-
     /**
      * @param string $key
      * @param string $value
@@ -54,6 +58,8 @@ class FileStorage
     protected function _getCache()
     {
         static $cache;
+
+        throw new Exception('not support FileStorageCache');
 
         if ($cache) {
             return $cache;
