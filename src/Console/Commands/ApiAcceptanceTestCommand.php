@@ -30,7 +30,7 @@ class ApiAcceptanceTestCommand extends Command
     protected $description = 'Warning ! 對 production 的 API 進行真實的測試 !';
 
     /**
-     * @param ThirdPartyResource $resource
+     * @param ResourceBuild $resourceBuild
      */
     public function handle(ResourceBuild $resourceBuild)
     {
