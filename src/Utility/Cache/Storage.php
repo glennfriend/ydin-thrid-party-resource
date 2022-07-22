@@ -5,6 +5,8 @@ namespace ThirdPartyResource\Utility\Cache;
 use Exception;
 
 /**
+ * @deprecated
+ *
  * 很單純的儲存資料到指定的地方
  *      - 沒有刪除檔案的功能, 但是可以覆蓋資料
  *      - 不使用 laravel cache

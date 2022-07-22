@@ -11,15 +11,9 @@ use ThirdPartyResource\ResourceBuild;
  */
 class TryCommand extends Command
 {
-    /**
-     *
-     */
     protected $signature = 'third-party-resource:try';
-
-    /**
-     *
-     */
     protected $description = 'try something';
+    protected ResourceBuild $resourceBuild;
 
     /**
      * @param ResourceBuild $resourceBuild

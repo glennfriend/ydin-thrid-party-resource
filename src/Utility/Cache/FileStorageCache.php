@@ -1,9 +1,12 @@
 <?php
+
 namespace ThirdPartyResource\Utility\Cache;
 
-use Doctrine\Common\Cache\FilesystemCache;
-
-class FileStorageCache extends FilesystemCache
+/**
+ * @deprecated
+ */
+// class FileStorageCache extends \Doctrine\Common\Cache\FilesystemCache
+class FileStorageCache
 {
     /**
      * 猜測 cache file 的位置
@@ -14,8 +17,9 @@ class FileStorageCache extends FilesystemCache
      */
     public function getGuessCacheFilename($key)
     {
-        $id = "[{$key}][1]";
-        return $this->getFilename($id);
+        throw new \Exception('not support getGuessCacheFilename');
+        // $id = "[{$key}][1]";
+        // return $this->getFilename($id);
     }
 
 }

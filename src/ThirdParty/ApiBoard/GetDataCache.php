@@ -1,8 +1,10 @@
 <?php
-declare(strict_types = 1);
+
+declare(strict_types=1);
+
 namespace ThirdPartyResource\ThirdParty\ApiBoard;
 
-use ThirdPartyResource\Utility\Cache\FileStorage;
+use ThirdPartyResource\Utility\Cache\CacheStorage;
 
 /**
  * feature
@@ -29,19 +31,18 @@ trait GetDataCache
      *          - 如果 status code 為 200
      *          - 如果目前沒有 cache
      *      - 如果目前已有 cache, 將不會重新產生
-     *      - 這些 cache 無關於 laravel cache
      *
      * @param array $row
      * @param int $lifetime
      * @return string
      */
-    public function getJsonCache(array $row=[], int $lifetime): string
+    public function getJsonCache(array $row = [], int $lifetime): string
     {
         $key = $this->getClassKeyName($row);
 
         $json = $this->_storage()->get($key);
         if ($json) {
-            return (string) $json;
+            return (string)$json;
         }
 
         list($json, $response) = $this->getJsonAndResponse($row);
@@ -59,7 +60,7 @@ trait GetDataCache
      * @param int $lifetime
      * @return array
      */
-    public function getArrayCache(array $row=[], int $lifetime): array
+    public function getArrayCache(array $row = [], int $lifetime): array
     {
         $text = $this->getJsonCache($row, $lifetime);
         return json_decode($text, true);
@@ -72,7 +73,7 @@ trait GetDataCache
      * @param array $row
      * @return string
      */
-    public function getJsonForever(array $row=[]): string
+    public function getJsonForever(array $row = []): string
     {
         // 315360000 = 10 year = 10 * 365 * 24*60*60
         $tenYearLifetime = 315360000;
@@ -84,12 +85,13 @@ trait GetDataCache
      *
      * @return array
      */
-    public function getArrayForever(array $row=[]): array
+    public function getArrayForever(array $row = []): array
     {
         return json_decode($this->getJsonForever($row), true);
     }
 
     /**
+     * @deprecated
      * 猜測 cache file
      *
      * @param array $row
@@ -98,7 +100,6 @@ trait GetDataCache
     public function guessCacheNameByKey(array $row)
     {
         $key = $this->getClassKeyName($row);
-
         return $this->_storage()->guessFilename($key);
     }
 
@@ -115,10 +116,7 @@ trait GetDataCache
         return json_encode($data, JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
     }
 
-    /**
-     * @return FileStorage
-     */
-    protected function _storage()
+    protected function _storage(): CacheStorage
     {
         static $storage;
 
@@ -126,7 +124,7 @@ trait GetDataCache
             return $storage;
         }
 
-        $storage = app(FileStorage::class);
+        $storage = new CacheStorage();
         return $storage;
     }
 
